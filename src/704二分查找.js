@@ -15,10 +15,17 @@ var search = function(nums, target) {
       return mid;
     }
     if (target < nums[mid]) {
+      // 在区间[l...mid -1]中查找
       r = mid - 1;
     } else {
+      // 在区间[mid+1...r]中查找
       l = mid + 1;
     }
   }
   return -1;
 };
+
+const nums = [-1, 0, 3, 5, 9, 12];
+const target = 9;
+const ret = search(nums, target);
+console.log(ret);
