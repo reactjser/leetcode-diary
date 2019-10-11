@@ -12,9 +12,12 @@ var moveZeroes = function(nums) {
   // 同时，[k...i]为0
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== 0) {
-      const temp = nums[k];
-      nums[k++] = nums[i];
-      nums[i] = temp;
+      if (i !== k) { // 避免自身与自身交换
+        const temp = nums[k];
+        nums[k] = nums[i];
+        nums[i] = temp;
+      }
+      k++;
     }
   }
 };
