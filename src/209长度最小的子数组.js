@@ -9,7 +9,7 @@ var minSubArrayLen = function(s, nums) {
   let sum = 0; // nums[l...r]之和
   let res = nums.length + 1; // 满足要求的长度
 
-  while (l < nums.length) {
+  while (l < nums.length - 1) {
     if (r + 1 < nums.length && sum < s) {
       sum += nums[++r];
     } else {
