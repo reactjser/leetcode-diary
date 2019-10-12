@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
     r = -1; // 滑动窗口为s[l...r]
   let res = 0;
 
-  while (l < s.length - 1) {
+  while (l < s.length) {
     if (r + 1 < s.length && freq[s[r + 1].charCodeAt(0)] === 0) {
       freq[s[++r].charCodeAt(0)]++;
     } else {
